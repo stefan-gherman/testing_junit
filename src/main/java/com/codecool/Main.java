@@ -1,5 +1,6 @@
 package com.codecool;
 
+import com.codecool.analyzers.FileWordAnalyzer;
 import com.codecool.readers.FilePartReader;
 
 import java.io.IOException;
@@ -19,10 +20,26 @@ public class Main {
 //
 //        System.out.println(reader.readLines());
 
-        reader.setToLine(90);
-        reader.setFromLine(2);
+//        reader.setToLine(1);
+//        reader.setFromLine(1);
+//
+        FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
+//        System.out.println(reader.readLines());
+//        System.out.println(analyzer.getWordsOrderedAlphabetically());
+//
+//        reader.setFilePath("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/for_test.txt");
+//        reader.setFromLine(1);
+//        reader.setToLine(2);
+//
+//        System.out.println(analyzer.getWordsOrderedAlphabetically());
+//        System.out.println(analyzer.getWordsContainingSubstring("roads"));
 
-        System.out.println(reader.readLines());
+
+        reader.setFilePath("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/palindromes.txt");
+        reader.setFromLine(1);
+        reader.setToLine(2);
+
+        System.out.println(analyzer.getStringsWhichPalindromes());
 
     }
 }

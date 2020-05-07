@@ -111,7 +111,7 @@ public class FilePartReader {
     }
 
     /*
-    <p> The read method reads all the contents from a file
+    <p> The read method reads all the contents from a file</p>
     @return returnString String the result as a string representation
     @throws IOException when file is not found
      */
