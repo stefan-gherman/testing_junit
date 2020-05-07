@@ -41,7 +41,7 @@ public class FileWordAnalyzer {
 
     /**
     <p>This method returns the words from a document ordered alphabetically</p>
-    *@return List orderedWords a list of words ordered alphabetically
+    @return List orderedWords a list of words ordered alphabetically
      */
     public List<String> getWordsOrderedAlphabetically() throws IOException {
         List<String> orderedWords;
@@ -52,8 +52,8 @@ public class FileWordAnalyzer {
 
     /**
     <p>This method returns the words from the document that contain a certain substring</p>
-    *@param subString a string containig the sequence that is being searched for
-    *@return List substringWords a list containing the words which contain the substring
+    @param subString a string containig the sequence that is being searched for
+    @return List substringWords a list containing the words which contain the substring
      */
     public List<String> getWordsContainingSubstring(String subString) throws IOException {
         List<String> allWords;

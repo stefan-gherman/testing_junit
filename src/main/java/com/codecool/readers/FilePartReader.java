@@ -36,7 +36,7 @@ public class FilePartReader {
     /**
     <p>Public setter for the starting line </p>
     @param fromLine the line at which the reader should start
-     @throws IllegalArgumentException when fromLine is greater than toLine
+     @exception IllegalArgumentException when fromLine is greater than toLine
      */
     public void setFromLine(int fromLine) throws IllegalArgumentException {
         if (fromLine > this.toLine || fromLine < 1) {
@@ -48,7 +48,7 @@ public class FilePartReader {
     /**
     <p>Public setter for the ending line </p>
     @param toLine the line at which the reader should stop
-    @throws IllegalArgumentException when fromLine is greater than toLine
+    @exception IllegalArgumentException when fromLine is greater than toLine
      */
     public void setToLine(int toLine) throws IllegalArgumentException {
         if (toLine < this.fromLine) {
@@ -93,7 +93,7 @@ public class FilePartReader {
     @param filePath the path of the file
     @param fromLine the starting line for the reader
     @param toLine the ending line for the reader
-    @throws IllegalArgumentException when fromLine is smaller than 1 or greater tha toLIne
+    @exception IllegalArgumentException when fromLine is smaller than 1 or greater tha toLIne
      */
     public void setup(String filePath, int fromLine, int toLine) throws IllegalArgumentException {
 
@@ -109,7 +109,7 @@ public class FilePartReader {
     /**
     <p> The read method reads all the contents from a file</p>
     @return returnString String the result as a string representation
-    @throws IOException when file is not found
+    @exception IOException when file is not found
      */
 
     public String read() throws IOException {
@@ -132,8 +132,8 @@ public class FilePartReader {
     /**
     <p>This method reads only the line between fromLine to toLine (both included)</p>
     @return returnString String the result as a string representation
-    @throws IOException on file not found
-    @throws IndexOutOfBoundsException  when fromLine is greater than the total number of lines the file has
+    @exception  IOException on file not found
+    @exception IndexOutOfBoundsException  when fromLine is greater than the total number of lines the file has
      */
 
     public String readLines() throws IOException, IndexOutOfBoundsException {
