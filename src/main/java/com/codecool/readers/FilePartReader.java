@@ -9,23 +9,23 @@ import java.util.Arrays;
 import java.util.List;
 
 
-/*
-FilePartReader class that handles reading from text files
+/**
+*FilePartReader class that handles reading from text files
  */
 public class FilePartReader {
 
-    /*
-    File path as a string
+    /**
+    *File path as a string
      */
     private String filePath;
 
-    /*
-    The line from which the reader should perform its action
+    /**
+    *The line from which the reader should perform its action
     */
     private int fromLine;
 
-    /*
-   The line at which the reader should stop.
+    /**
+   *The line at which the reader should stop.
     */
     private int toLine;
 
@@ -33,11 +33,10 @@ public class FilePartReader {
 
     }
 
-    /*
+    /**
     <p>Public setter for the starting line </p>
     @param fromLine the line at which the reader should start
-    @return nothing
-    @throws IllegalArgumentException when fromLine is greater than toLine
+     @throws IllegalArgumentException when fromLine is greater than toLine
      */
     public void setFromLine(int fromLine) throws IllegalArgumentException {
         if (fromLine > this.toLine || fromLine < 1) {
@@ -46,10 +45,9 @@ public class FilePartReader {
         this.fromLine = fromLine;
     }
 
-    /*
+    /**
     <p>Public setter for the ending line </p>
     @param toLine the line at which the reader should stop
-    @return nothing
     @throws IllegalArgumentException when fromLine is greater than toLine
      */
     public void setToLine(int toLine) throws IllegalArgumentException {
@@ -59,16 +57,15 @@ public class FilePartReader {
         this.toLine = toLine;
     }
 
-    /*
+    /**
   <p>Public setter for the file path </p>
   @param filePath actual path of the file.
-  @return nothing
    */
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
 
-    /*
+    /**
     <p> Getter for fromLine
     @return int fromLine
      */
@@ -76,7 +73,7 @@ public class FilePartReader {
         return this.fromLine;
     }
 
-    /*
+    /**
   <p> Getter for fromLine
   @return int fromLine
    */
@@ -84,19 +81,18 @@ public class FilePartReader {
         return this.toLine;
     }
 
-    /*
+    /**
     <p> Getter for the filePath
     @return filePath String the file path of the file
      */
     public String getFilePath() {
         return this.filePath;
     }
-    /*
+    /**
     <p> The setup method assigns values to the class variables
     @param filePath the path of the file
     @param fromLine the starting line for the reader
     @param toLine the ending line for the reader
-    @return nothing
     @throws IllegalArgumentException when fromLine is smaller than 1 or greater tha toLIne
      */
     public void setup(String filePath, int fromLine, int toLine) throws IllegalArgumentException {
@@ -110,7 +106,7 @@ public class FilePartReader {
         this.toLine = toLine;
     }
 
-    /*
+    /**
     <p> The read method reads all the contents from a file</p>
     @return returnString String the result as a string representation
     @throws IOException when file is not found
@@ -133,7 +129,7 @@ public class FilePartReader {
         return returnString.stripTrailing();
     }
 
-    /*
+    /**
     <p>This method reads only the line between fromLine to toLine (both included)</p>
     @return returnString String the result as a string representation
     @throws IOException on file not found
