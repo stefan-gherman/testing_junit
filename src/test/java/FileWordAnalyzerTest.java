@@ -28,7 +28,7 @@ public class FileWordAnalyzerTest {
         FilePartReader reader = new FilePartReader();
         reader.setup("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/for_test.txt", 1, 2);
 
-        List<String> result = new ArrayList<>(Arrays.asList("and", "by,", "crossroads", "draw", "lies", "line", "makes", "more", "need", "No", "of", "pass", "reached", "the", "the", "time", "to", "truth", "we", "We've", "what", "will"));
+        List<String> result = new ArrayList<>(Arrays.asList("and", "by,", "crossRoads", "draw", "lies", "line", "makes", "more", "need", "No", "of", "pass", "reached", "the", "the", "time", "to", "truth", "we", "We've", "what", "will"));
         FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
         assertEquals(result, analyzer.getWordsOrderedAlphabetically());
     }
@@ -50,11 +50,32 @@ public class FileWordAnalyzerTest {
         FilePartReader reader = new FilePartReader();
         reader.setup("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/for_test.txt", 1, 2);
 
-        List<String> result = new ArrayList<>(Arrays.asList("crossroads"));
+        List<String> result = new ArrayList<>(Arrays.asList("crossRoads"));
         FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
         assertEquals(result, analyzer.getWordsContainingSubstring("roads"));
     }
 
+
+    @Test
+    public void testGetStringWhichPalindromeThrowsIOException()  {
+        FilePartReader reader = new FilePartReader();
+        reader.setup("path", 1, 13);
+
+        FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
+        assertThrows(IOException.class, () -> {
+            analyzer.getStringsWhichPalindromes();
+        });
+    }
+
+    @Test
+    public void testGetStringWhichPalindromeCorrectAnswer() throws  IOException {
+        FilePartReader reader = new FilePartReader();
+        reader.setup("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/palindromes.txt", 1, 2);
+
+        List<String> result = new ArrayList<>(Arrays.asList("Civic" ,"Racecar","Civic", "Kayak"));
+        FileWordAnalyzer analyzer = new FileWordAnalyzer(reader);
+        assertEquals(result, analyzer.getStringsWhichPalindromes());
+    }
 
 
 
