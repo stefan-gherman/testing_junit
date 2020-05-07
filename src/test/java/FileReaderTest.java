@@ -42,7 +42,7 @@ public class FileReaderTest {
     public void testReadReturnsCorrectResult() throws IOException {
         FilePartReader reader = new FilePartReader();
         reader.setup("/mnt/7d45c543-fc06-4310-b70a-2a9aa2e43a54/Projects/codecool/java/testing_junit/.idea/files/for_test.txt", 1, 13);
-        String correctResult = "We've reached the crossroads of what makes truth and lies\n" +
+        String correctResult = "We've reached the crossRoads of what makes truth and lies\n" +
                 "No more time will pass by, we need to draw the line\n" +
                 "All the things you did, they left me so betrayed\n" +
                 "The words you never said now begin to fade away";
